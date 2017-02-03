@@ -1,0 +1,84 @@
+<div class="container" style="padding-top: 60px;" ng-controller="find-address as profile">
+
+    <div class="page-header row">
+        <div class="col-lg-8 col-sm-8">
+            <label class="white-stylish-text-super-big">Create a new Address</label>
+        </div>
+        <div class="col-lg-2 col-sm-2">
+            <button class="btn btn-lg btn-primary" style="width: 80%" type="submit" role="button"
+                    ui-sref="user-profile({ userInfo : profile.userInfo, token : profile.token })">Back</button>
+        </div>
+        <div class="col-lg-2 col-sm-2">
+            <button class="btn btn-lg btn-primary" style="width: 80%" type="submit" role="button"
+                    ui-sref="user-logout({ userInfo : profile.userInfo })">Log Out</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+
+            <div class="text-center">
+                <img class="avatar img-circle img-thumbnail" ng-src="../../images/address-create.png">
+            </div>
+
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+
+            <form class="form-horizontal" role="form" ng-submit="profile.createAddress()">
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label white-stylish-text">Address line:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" ng-model="profile.newAddress.line" type="text">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label required class="col-lg-3 control-label white-stylish-text">City:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" ng-model="profile.newAddress.city" type="text">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label required class="col-md-3 control-label white-stylish-text">State:</label>
+                    <div class="col-md-8">
+                        <select required ng-model="profile.newAddress.state" ng-options="x for x in profile.states"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label required class="col-lg-3 control-label white-stylish-text">Zipcode:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" ng-model="profile.newAddress.zipCode" type="number">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label required class="col-lg-3 control-label white-stylish-text">Country Code:</label>
+                    <div class="col-lg-8">
+                        <label class="form-control"> {{ profile.newAddress.countryCode }}</label>
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <label ng-if="profile.message">{{ profile.addressMessage }}</label>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <button class="btn btn-lg btn-primary" type="submit" role="button">Save Address</button>
+                        <span/>
+                        <input class="btn btn-default" value="Cancel" type="button" ng-click="find-address-post-bid">
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

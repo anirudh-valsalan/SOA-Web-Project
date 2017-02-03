@@ -1,0 +1,95 @@
+<div class="container" style="padding-top: 60px;" ng-controller="post-bid as profile">
+
+    <div class="page-header row">
+        <div class="col-lg-8 col-sm-8">
+            <label ng-hide="profile.successfulPosting" class="white-stylish-text-super-big">Post new  Bid</label>
+            <label ng-show="profile.successfulPosting" class="white-stylish-text-super-big">Bid posted successfully !</label>
+        </div>
+        <div class="col-lg-2 col-sm-2">
+            <button class="btn btn-lg btn-primary" style="width: 80%" type="submit" role="button"
+                    ui-sref="user-profile({ userInfo : profile.userInfo, token : profile.token })">Back</button>
+        </div>
+        <div class="col-lg-2 col-sm-2">
+            <button class="btn btn-lg btn-primary" style="width: 80%" type="submit" role="button"
+                    ui-sref="user-logout({ userInfo : profile.userInfo })">Log Out</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- left column -->
+        <div ng-hide="profile.successfulPosting" class="col-md-4 col-sm-6 col-xs-12">
+
+            <div class="text-center">
+                <img class="avatar img-circle img-thumbnail" ng-src="../../images/bid-icon.jpg">
+            </div>
+
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+
+            <form ng-hide="profile.successfulPosting" class="form-horizontal" role="form" ng-submit="profile.postBid()">
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label white-stylish-text">Apartment Type:</label>
+                    <div class="col-md-8">
+                        <select required ng-model="profile.bid.apartmentType" ng-options="x for x in profile.apartmentTypes"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label white-stylish-text">Price:</label>
+                    <div class="col-lg-8">
+                        <input required class="form-control" ng-model="profile.bid.price" type="number">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label white-stylish-text">From Date:</label>
+                    <div class="col-lg-8">
+                        <input required class="form-control" ng-model="profile.bid.fromDate" type="date">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label white-stylish-text">To Date:</label>
+                    <div class="col-lg-8">
+                        <input required class="form-control" ng-model="profile.bid.toDate" type="date">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label white-stylish-text">Quantity:</label>
+                    <div class="col-lg-8">
+                        <input required class="form-control" ng-model="profile.bid.quantity" type="number">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label white-stylish-text">Comments:</label>
+                    <div class="col-lg-8">
+                        <input required class="form-control" ng-model="profile.bid.comments" type="text">
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <label ng-if="profile.message">{{ profile.message }}</label>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <button class="btn btn-lg btn-primary" type="submit" role="button">Post Bid</button>
+                        <span/>
+                        <input class="btn btn-default" value="Cancel" type="button" ng-click="profile.goBackToProfile()">
+                    </div>
+                </div>
+
+            </form>
+
+            <div ng-show="profile.successfulPosting">
+                <img class="ng-enter col-lg-3 control-label" ng-src="../../images/bid-posted.png" ng-view>
+            </div>
+        </div>
+    </div>
+</div>
