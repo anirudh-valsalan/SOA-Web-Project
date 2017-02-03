@@ -1,6 +1,6 @@
 # wpl-cookies
 
 Contributers :
-a. Anirudha
+a. Anirudh Kuttiyil Valsalan
 b. Himanshu
 c. Srinivas
