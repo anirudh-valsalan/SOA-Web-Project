@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" 
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  
+		  xsi:schemaLocation="http://dozer.sourceforge.net
+		  		http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<mapping>
+		<class-a>edu.utdallas.wpl.cookies.spring.dao.orm.AddressEntity</class-a>
+		<class-b>edu.utdallas.wpl.cookies.spring.common.dto.Address</class-b>
+	</mapping>
+
+	<mapping>
+		<class-a>edu.utdallas.wpl.cookies.spring.dao.orm.UserInformationEntity</class-a>
+		<class-b>edu.utdallas.wpl.cookies.spring.common.dto.UserInformation</class-b>
+	</mapping>
+	
+	<mapping>
+		<class-a>edu.utdallas.wpl.cookies.spring.dao.orm.PublishedBidsEntity</class-a>
+		<class-b>edu.utdallas.wpl.cookies.spring.common.dto.PublishedBids</class-b>
+	</mapping>
+	<mapping>
+		<class-a>edu.utdallas.wpl.cookies.spring.dao.orm.TransactionInfoEntity</class-a>
+		<class-b>edu.utdallas.wpl.cookies.spring.common.dto.TransactionInfo</class-b>
+	</mapping>
+	
+	<mapping>
+		<class-a>edu.utdallas.wpl.cookies.spring.dao.orm.ShoppingInfoEntity</class-a>
+		<class-b>edu.utdallas.wpl.cookies.spring.common.dto.ShoppingInfo</class-b>
+	</mapping>
+	
+
+</mappings> 
